@@ -1,0 +1,54 @@
+----- remove debug=true
+
+----- install docker
+
+----- install ibmcloud cli
+
+
+
+
+docker build -t hello-world .
+
+docker images
+
+docker run -p 5001:5001 hello-world
+
+
+
+
+ibmcloud plugin install container-registry
+
+ibmcloud plugin install container-service
+
+ibmcloud login
+
+ibmcloud cr login --client docker
+
+ibmcloud cr namespace-add hello-space
+
+docker tag hello-world icr.io/hello-space/hello-world:latest
+
+docker push icr.io/hello-space/hello-world:latest
+
+ibmcloud cr image-list
+
+
+
+
+ibmcloud ks cluster config --cluster cdlss06f0fh93gv50fr0
+
+kubectl apply -f deployment.yaml
+
+ibmcloud cs workers --cluster cde0ac7f066vuobgl68g
+
+kubectl describe service hello-world | grep NodePort
+
+http://<public-ip-address>:<port>/app
+
+
+
+
+kubectl delete deploy hello-world
+
+ibmcloud cs cluster rm -c cde0ac7f066vuobgl68g -f
+
