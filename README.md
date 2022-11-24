@@ -2,4 +2,4 @@
 Nutrition assistant Application
 
 
-Demo video link - 
+Demo video link - https://drive.google.com/file/d/10-URH48XKv0ZT1I8L_rItFDMqfZyoCDb/view?usp=share_link
